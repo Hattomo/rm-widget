@@ -1,0 +1,50 @@
+{
+    "name": "hubert-train",
+    // "build": {
+    // 	"dockerfile": "Dockerfile"
+    // },
+    // "runArgs": [
+    // 	"--gpus",
+    // 	"all"
+    // ],
+    // 👇 Features to add to the Dev Container. More info: https://containers.dev/implementors/features.
+    // "features": {},
+    "dockerComposeFile": [
+        "../docker-compose.yml"
+    ],
+    "service": "rm-widget",
+    "workspaceFolder": "/workspaces/rm-widget",
+    "overrideCommand": true,
+    // 👇 Use 'forwardPorts' to make a list of ports inside the container available locally.
+    // "forwardPorts": [],
+    // 👇 Use 'postCreateCommand' to run commands after the container is created.
+    // "postCreateCommand": "",
+    // "mounts": [
+    // 	"source=/home/hattori/users/hattori/dataset,target=/workspaces/dataset,type=bind"
+    // ],
+    // "postCreateCommand": "sudo chmod +x ./postCreate.sh",
+    // 👇 Configure tool-specific properties.
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-python.python",
+                "njpwerner.autodocstring",
+                "tamasfe.even-better-toml",
+                "mhutchie.git-graph",
+                "github.copilot",
+                "ms-python.isort",
+                "grapecity.gc-excelviewer"
+            ],
+            "settings": {
+                // Set *default* container specific settings.json values on container create.
+                "dotfiles.repository": "https://github.com/Hattomo/dotfiles.git",
+                "dotfiles.targetPath": "~/dotfiles",
+                "dotfiles.installCommand": "~/dotfiles/bootstrap.sh"
+            }
+        }
+    },
+    "features": {}
+    // "shutdownAction": "none"
+    // 👇 Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+    // "remoteUser": "root"
+}

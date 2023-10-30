@@ -1,0 +1,22 @@
+version: '3.4'
+
+services:
+  rm-widget:
+    image: rm-widget
+    build:
+      context: .
+      dockerfile: .devcontainer/Dockerfile
+    deploy:
+      resources:
+        reservations:
+          devices:
+          - driver: nvidia
+            capabilities: [gpu]
+            count: all
+    environment:
+      - IS_ZOXIDE=false
+    volumes:
+      - type: bind
+        source: ./
+        target: /workspaces/rm-widget
+    shm_size: '16gb'
