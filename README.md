@@ -1,4 +1,4 @@
-# Rakuten Mobile Widget
+# RM Widget
 
 ## Requirements
 Install library
